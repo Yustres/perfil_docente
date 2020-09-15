@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: arial,sans-serif;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color :azure;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+text-decoration: none;
+color: #666;
+}
+
+/**********HEADER*/
+
+#header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+#menu_header {
+  position: absolute;
+  right: 15px;
+  font-size: small;
+  display: flex;
+}
+.menu_items {
+  text-decoration: none;
+  display: inline-block;
+  padding: 0 10px;
+  margin: 5px;
+  color: #666;
+  line-height: 40px;
+  cursor: pointer;
+}
+.menu_items:visited {
+  color: #666;
+}
+.menu_items:hover {
+  text-decoration: underline;
+}
+
+
+
+
+/**********CONTENIDO*******/
+
+#contenido {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#imagen, #buscador, #botones, #idiomas {
+  display: flex;
+}
+
+#imagen {
+  height: 140px;
+}
+
+#buscador {
+  width: 585px;
+  border: solid 1px powderblue;;
+  box-shadow: 0px 1px 2px powderblue;
+}
+#buscador:hover {
+  border: solid 1px paleturquoise;
+  box-shadow: 1px 2px 3px paleturquoise,
+      -1px 3px 5px paleturquoise;
+}
+.textbox:focus {
+  outline: 0px;
+}
+
+#idiomas {
+  display: inline-block;
+  line-height: 28px;
+  font-size: small;
+}
+#idiomas a {
+  padding: 0 3px;
+}
+#idiomas a:hover {
+  text-decoration: underline;
+}
+
+
+/**********FOOTER************/
+
+#footer {
+  background: #f2f2f2;
+  width: 100%;
+  height: 42px;
+  border-top: solid 1px #e4e4e4;
+  color: #666;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#pie_der, #pie_izq {
+  display: flex;
+  font-size: small;
+}
+#footer a {
+  padding: 0 17px;
+}
+#footer a:visited {
+  padding: 0 17px;
+  color: #666;
+}
+#footer a:hover {
+  text-decoration: underline;
+}
+
+#pie_der {
+  position: absolute;
+  right: 15px;
+}
+#pie_izq {
+  position: absolute;
+  left: 15px;
+}
+
+
+
+/************ELEMento individuales*/
+#img_google {
+  width: 280px;
+  margin: auto;
+}
+
+
+.textbox {
+  height: 45px;
+  width: 540px;
+  border: none;
+  padding-left: 15px;
+  font-size: 17px;
+}
+
+.microfono {
+  width: 45px;
+  height: 45px;
+  padding-right: 10px;
+  cursor: pointer;
+}
+.microfono>img {
+  width: 18px;
+  height: 26px;
+  padding-left: 15px;
+  padding-top: 8px;
+}
+
+.b_buscador {
+  width: 150px;
+  height: 35px;
+  border-radius: 5px;
+  background: linear-gradient(0deg,cornflowerblue 0%, cornflowerblue 100%);
+  text-align: center;
+  margin: 30px 5px;
+  color: #757575;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: 'Lato', sans-serif;
+  line-height: 35px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+
+
+.b_buscador:hover {
+  width: 148px;
+  height: 33px;
+  color: black;
+  border: solid 1px darkgray;
+  border-radius: 1px;
+  line-height: 34px;
+  box-shadow: 1px 1px 3px lavender,
+      -1px 1px 3px lavender;
+  cursor: pointer;
+}
+
+
+
+.menu {
+  width: 20px;
+  height: 40px;
+}
+#menu_icono {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: dimgray;
+  box-shadow: 7px 7px dimgray,
+      0px 7px dimgray,
+      14px 14px dimgray,
+      0px 14px dimgray,
+      7px 14px dimgray,
+      7px 0px dimgray,
+      14px 0px dimgray,
+      14px 7px dimgray;
+  top: 15px;
+  right: 150px;
+}
+
+i {
+  color: dimgray;
+  margin: 8px 0 0 0;
+  font-size: 15px;
+}
+
+.perfil {
+  width: 100px;
+  height: 30px;
+  border-radius: 3px;
+  background: royalblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+}
+.perfil>p {
+  color: white;
+  font-weight: bold;
+}
+
+#menu_icono:hover {
+  background: black;
+  box-shadow: 7px 7px black,
+      0px 7px black,
+      14px 14px black,
+      0px 14px black,
+      7px 14px black,
+      7px 0px black,
+      14px 0px black,
+      14px 7px black;
+}
+i:hover {
+  color: black;
+}
