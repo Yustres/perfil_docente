@@ -8,6 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppController = void 0;
 const common_1 = require("@nestjs/common");
@@ -17,11 +20,11 @@ let AppController = class AppController {
         this.teacherService = teacherService;
     }
     async root() {
-        const profesores = await this.teacherService.getTeacher();
-        return { message: 'Hello world!', profesores };
+        return { message: 'Hello world!' };
     }
-    async getteacher() {
-        return await this.teacherService.getTeacher();
+    async login(data, res) {
+        const result = await this.teacherService.getTeacher(data);
+        return { result };
     }
 };
 __decorate([
@@ -32,11 +35,13 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], AppController.prototype, "root", null);
 __decorate([
-    common_1.Get('teachers'),
+    common_1.Post('/resultadoVista'),
+    common_1.Render('resultadoVista'),
+    __param(0, common_1.Body('dato')), __param(1, common_1.Res()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
-], AppController.prototype, "getteacher", null);
+], AppController.prototype, "login", null);
 AppController = __decorate([
     common_1.Controller(),
     __metadata("design:paramtypes", [teacher_service_1.TeacherService])

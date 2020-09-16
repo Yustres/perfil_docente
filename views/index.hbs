@@ -10,73 +10,65 @@
 </head>
 
 <body>
-
     <header id="header">
         <ul id="menu_header">
-            <li class="menu_items"><a href="#">Gmail</a></li>
-            <li class="menu_items"><a href="#">Imágenes</a></li>
-            <li class="menu_items" class="menu"><a id="menu_icono" href="#"></a></li>
-            <li class="menu_items"><a href="#">
-                    <div class="perfil">
-                        <p>Iniciar sesión</p>
-                    </div>
-                </a></li>
+            <li class="menu_items"><a href="#">Institucion educativa</a></li>
+
+
         </ul>
     </header>
 
 
     <div id="contenido">
         <div id="imagen">
-            <a href="#"><img id="img_google"
-                    src="https://www.guiadelnino.com/var/guiadelnino.com/storage/images/planes-para-ninos/cuentos-infantiles/4-cuentos-para-la-vuelta-al-cole/el-senor-lince-y-el-caso-del-colegio-sin-libros/7965092-1-esl-ES/el-senor-lince-y-el-caso-del-colegio-sin-libros.jpg"
-                    alt="google"></a>
+            <a></a><img id="img_google" src="profe.png" alt="google"></a>
         </div>
-        <div id="buscador">
-            <input class="textbox" type="text" name="dato" id="dato">
-        </div>
-        <div id="botones">
+        <form action="/resultadoVista" method="post">
+            <div id="buscador">
+                <input class="textbox" type="text" name="dato" id="dato">
+              
+            </div>
 
-            <button type="button" class="b_buscador" onclick="llamarVistaParcial()">
-                Buscar
-            </button>
+            <div id="botones">
+                <button type="submit" class="b_buscador">
+                    Buscar
+                </button>
+            </div>
+        </form>
 
-        </div>
 
     </div>
 
 
     <footer id="footer">
         <ul id="pie_der">
-            <li><a href="#">Privacidad</a></li>
-            <li><a href="#">Condiciones</a></li>
-            <li><a href="#">Configuración</a></li>
+            <li><a href="#">Danna Camilla Claros </a></li>
+            <li><a href="#">Jessica Yustres Lozano</a></li>
+            <li><a href="#">Universidad de la Amazonia</a></li>
         </ul>
         <ul id="pie_izq">
-            <li><a href="#">Publicidad</a></li>
-            <li><a href="#">Empresa</a></li>
-            <li><a href="#">Acerca de</a></li>
+            <li><a href="#">Gestión del Conocimiento</a></li>
+            <li><a href="#">Co-autor: Stiven</a></li>
+
         </ul>
     </footer>
-
 
 </body>
 
 <script>
     function llamarVistaParcial() {
-        var laURLDeLaVista = '@Url.Action("Detalles", "Home")'; // no se bn si es así, sse supone que aquí iria la ruta
+        var laURLDeLaVista = 'resultadoVista'; // no se bn si es así, sse supone que aquí iria la ruta
         var dato = document.getElementById("dato").value;
         alert(dato);
-        $.ajax({
-            cache: false,
-            async: true,
-            type: "GET",
-            url: laURLDeLaVista,
-            data: {},
-            success: function (response) {
-                $('#resultado').html('');
-                $('#resultado').html(response);
-            }
-        });
+
+        fetch(`teacher/${id}`, {
+            method: 'DELETE'
+        }).then(result => {
+            console.log(result);
+            location.reload();
+        }).catch(err => {
+            console.log(err);
+        })
     }
 </script>
 

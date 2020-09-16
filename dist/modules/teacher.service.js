@@ -18,19 +18,26 @@ let TeacherService = class TeacherService {
     constructor(neo4j) {
         this.neo4j = neo4j;
     }
-    async getTeacher() {
+    async getTeacher(dato) {
         const session = this.neo4j.session();
-        const query = 'MATCH (n:Profesor) RETURN n.nombre as nombre';
+        console.log("date" + dato);
+        const query = 'MATCH (a:Docente)-[:SE_LE_DIFICULTA]->(b:CacteristicaHabilidad),' +
+            '(b:CacteristicaHabilidad)-[r:PERTENECE]->(c:Habilidad)' +
+            'where  b.nombre  CONTAINS "' + dato + '" or c.nombre CONTAINS "' + dato + '"' +
+            'RETURN a.nombre as nombre, a.direccion as direccion ,a.edad as edad, a.id as id, c.nombre as habilidad';
         return session
             .run(query)
             .then((result) => {
             session.close();
-            const profesores = result.records.map(record => record.toObject());
-            return profesores.map(pro => {
+            const results = result.records.map(record => record.toObject());
+            return results.map(pro => {
                 return {
                     "@context": "http://schema.org/",
                     "@type": "Docente",
-                    "nombre": pro.nombre
+                    "nombre": pro.nombre,
+                    "direccion": pro.direccion,
+                    "edad": pro.edad,
+                    "habilidad": pro.habilidad
                 };
             });
         })

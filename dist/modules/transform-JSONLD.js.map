@@ -1,0 +1,1 @@
+{"version":3,"file":"transform-JSONLD.js","sourceRoot":"","sources":["../../src/modules/transform-JSONLD.ts"],"names":[],"mappings":";;;AAAA,SAAgB,WAAW,CAAE,KAAK;IAC9B,OAAO,KAAK,CAAC,GAAG,CAAC,GAAG,CAAC,EAAE;QACnB,OAAO;YACH,UAAU,EAAE,oBAAoB;YAChC,OAAO,EAAE,SAAS;YAClB,QAAQ,EAAE,GAAG,CAAC,MAAM;SACvB,CAAA;IACL,CAAC,CAAC,CAAA;AACN,CAAC;AARD,kCAQC"}
